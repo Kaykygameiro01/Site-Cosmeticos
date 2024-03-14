@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CKS Cosméticos</title>
+  <link rel="icon" href="img/cks_logo.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="header">
+      <a href="index.html">
+        <img src="./img/cks_logo.png" alt="CKS cosmeticos" width="104.000000pt" height="104.000000pt">
+      </a>
+
+      <nav>
+        <ul class="header-menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="titulo">Nossos produtos<span>.</span></h1>
+
+    <div class="filtro">
+      <label for="categoria">Filtrar por Tipo:</label>
+      <select id="categoria" onchange="filtrarProdutos()">
+        <option value="todos">Todos</option>
+        <option value="botox">Botox</option>
+        <option value="kit">Kits</option>
+      </select>
+    </div>
+
+    <div class="produtos">
+      <div class="produto categoria-botox">
+        <img src="img/produtos/3.png" alt="Botox Matizador" style="max-width:100%">
+        <h2>Botox Matizador</h2>
+        <p class="preco">R$100.00</p>
+        <p>Para cabelos loiros - 1KG</p>
+        <p><button>Comprar</button></p>
+      </div>
+
+      <div class="produto categoria-botox">
+        <img src="img/produtos/4.png" alt="Botox Matizador" style="max-width:100%">
+        <h2>Botox Matizador</h2>
+        <p class="preco">R$100.00</p>
+        <p>Para todos os cabelos - 1KG</p>
+        <p><button>Comprar</button></p>
+      </div>
+
+      <div class="produto categoria-botox">
+        <img src="img/produtos/5.png" alt="Botox Anti Frizz" style="max-width:100%">
+        <h2>Botox Anti Frizz</h2>
+        <p class="preco">R$79.90</p>
+        <p>Para reconstrução capilar - 1KG</p>
+        <p><button>Comprar</button></p>
+      </div>
+    </div>
+
+    <div class="produtos">
+      <div class="produto categoria-kit">
+        <img src="img/produtos/8.png" alt=" Kit Hibisco" style="max-width:100%">
+        <h2>Kit Hibisco</h2>
+        <p class="preco">R$94.90</p>
+        <p>Kit Shampoo, Máscara e
+        <p> Condicionador para cabelos loiros</p>
+        </p>
+        <p><button>Comprar</button></p>
+      </div>
+
+      <div class="produto categoria-kit">
+        <img src="img/produtos/7.png" alt="Kit Kiwi" style="max-width:100%">
+        <h2>Kit Kiwi</h2>
+        <p class="preco">R$79.90</p>
+        <p>Kit Shampoo</p>
+        <p> Máscara e Condicionador</p>
+        <p><button>Comprar</button></p>
+      </div>
+
+      <div class="produto categoria-botox">
+        <img src="img/produtos/6.png" alt="Botox repositor de massa" style="max-width:100%">
+        <h2>Botox Repositor </h2>
+        <p class="preco">R$79.90</p>
+        <br>
+
+        <p>Botox repositor de massa</p>
+
+        <p><button>Comprar</button></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-bg">
+    <div class="footer-contato">
+      <h3>Contato</h3>
+      <ul>
+        <li><a href="tel:+5521999381132">+55 21 99938-1132</a></li>
+        <li><a href="vggameiro@gmail.com">vggameiro@gmail.com</a></li>
+        <li>R. César, 211 A - Realengo, Rio de Janeiro</li>
+        <li>Rio de Janeiro - RJ</li>
+      </ul>
+      <div class="footer-img">
+        <a href="https://www.instagram.com/cosmeticoscks/">
+          <img src="./img/icones/instagram.svg" width="32" height="32" alt="Instagram">
+        </a>
+        <a href="https://web.facebook.com/carlacosta.cks">
+          <img src="./img/icones/facebook.svg" width="32" height="32" alt="Facebook">
+        </a>
+      </div>
+    </div>
+    <p>CKSCOSMETICOS.COM - TODOS OS DIREITOS RESERVADOS - 2023</p>
+  </footer>
+
+  <script>
+    function filtrarProdutos() {
+      const filtroSelect = document.getElementById("categoria");
+      const filtro = filtroSelect.value;
+
+      const produtos = document.getElementsByClassName("produto");
+
+      for (let i = 0; i < produtos.length; i++) {
+        const categoriaProdutoBotox = produtos[i].classList.contains("categoria-botox");
+        const categoriaProdutoKit = produtos[i].classList.contains("categoria-kit");
+
+        if (filtro === "todos" || (filtro === "botox" && categoriaProdutoBotox) || (filtro === "kit" && categoriaProdutoKit)) {
+          produtos[i].style.display = "block";
+        } else {
+          produtos[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

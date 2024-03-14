@@ -1,0 +1,75 @@
+
+/* Página produtos */
+
+h1 {
+  font-family: "Amatic SC", cursive;
+  font-size: 36px;
+  color: white;
+  text-align: center;
+}
+
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+}
+
+.produto {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.404);
+}
+
+.produto p {
+  margin: 0;
+}
+
+.preco {
+  color: #fcb900;
+  font-size: 22px;
+}
+
+.produto button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: rgb(89, 30, 138);
+  background-color: #fcb900;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.produto button:hover {
+  background-color: #ffbb00bd;
+}
+
+.filtro {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+ 
+
+}
+
+
+.filtro select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+
+
+@media (max-width: 600px) {
+  .produto {
+    max-width: 100%;
+  }
+}
